@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'my-app',
+    selector: 'reddit',
     templateUrl: 'app/app.component.html'
 })
 
 export class AppComponent {
-    names: string[];
-
     constructor() {
-        this.names = ['John', 'Liza', 'Erik'];
+
+    }
+
+    addArticle(title: HTMLInputElement, link: HTMLInputElement): void {
+        console.log(`Adding article title: ${title.value}  and link: ${link.value}`);
     }
 }
