@@ -1,4 +1,22 @@
 import {Component} from "@angular/core";
+
+class Article {
+    title: string;
+    link: string;
+    votes: number;
+    constructor(title: string, link: string, votes?: number) {
+        this.title = title;
+        this.link = link;
+        this.votes = votes || 0;
+    }
+    voteUp(): any {
+        this.votes += 1;
+    }
+    voteDown(): any {
+        this.votes -= 1;
+    }
+}
+
 @Component({
     selector: 'reddit-article',
     host: {
@@ -7,21 +25,20 @@ import {Component} from "@angular/core";
     templateUrl: 'app/app.reddit-article.html'
 })
 
-export class ArticleComponent { 
-    votes: number;
-    title: string;
-    link: string;
+export class ArticleComponent {
+    article: Article;
+
+    voteUp(): boolean {
+        this.article.voteUp();
+        return false;
+    }
+
+    voteDown(): boolean {
+        this.article.voteDown();
+        return false;
+    }
+
     constructor() {
-        this.title = 'Angular2';
-        this.link = 'http://angular.io';
-        this.votes = 10;
-    }
-    voteUp() {
-        this.votes += 1;
-        return false;
-    }
-    voteDown() {
-        this.votes -= 1;
-        return false;
+        this.article = new Article('Angular 2', 'http://angular.io', 10);
     }
 }

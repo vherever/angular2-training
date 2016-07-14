@@ -9,18 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var Article = (function () {
+    function Article(title, link, votes) {
+        this.title = title;
+        this.link = link;
+        this.votes = votes || 0;
+    }
+    Article.prototype.voteUp = function () {
+        this.votes += 1;
+    };
+    Article.prototype.voteDown = function () {
+        this.votes -= 1;
+    };
+    return Article;
+}());
 var ArticleComponent = (function () {
     function ArticleComponent() {
-        this.title = 'Angular2';
-        this.link = 'http://angular.io';
-        this.votes = 10;
+        this.article = new Article('Angular 2', 'http://angular.io', 10);
     }
     ArticleComponent.prototype.voteUp = function () {
-        this.votes += 1;
+        this.article.voteUp();
         return false;
     };
     ArticleComponent.prototype.voteDown = function () {
-        this.votes -= 1;
+        this.article.voteDown();
         return false;
     };
     ArticleComponent = __decorate([
