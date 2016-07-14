@@ -9,20 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var app_reddit_article_1 = require("./app.reddit-article");
+var RedditApp = (function () {
+    function RedditApp() {
     }
-    AppComponent.prototype.addArticle = function (title, link) {
+    RedditApp.prototype.addArticle = function (title, link) {
         console.log("Adding article title: " + title.value + "  and link: " + link.value);
     };
-    AppComponent = __decorate([
+    RedditApp = __decorate([
         core_1.Component({
             selector: 'reddit',
-            templateUrl: 'app/app.component.html'
+            templateUrl: 'app/app.main.html',
+            directives: [app_reddit_article_1.ArticleComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], RedditApp);
+    return RedditApp;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.RedditApp = RedditApp;
+//# sourceMappingURL=app.main.js.map
