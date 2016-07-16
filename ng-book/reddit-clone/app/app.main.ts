@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {ArticleComponent} from "./app.reddit-article";
+import {Article} from './app.reddit-article';
 
 @Component({
     selector: 'reddit',
@@ -8,8 +9,14 @@ import {ArticleComponent} from "./app.reddit-article";
 })
 
 export class RedditApp {
-    constructor() {
+    articles: Article[];
 
+    constructor() {
+        this.articles = [
+            new Article('Angular 2', 'http://angular.io', 3),
+            new Article('React', 'http://facebook.github.io/react', 2),
+            new Article('Underscore', 'http://underscorejs.org', 1),
+        ];
     }
 
     addArticle(title: HTMLInputElement, link: HTMLInputElement): void {

@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 
-class Article {
+export class Article {
     title: string;
     link: string;
     votes: number;
@@ -19,6 +19,7 @@ class Article {
 
 @Component({
     selector: 'reddit-article',
+    inputs: ['article'],
     host: {
         class: 'row'
     },
@@ -36,9 +37,5 @@ export class ArticleComponent {
     voteDown(): boolean {
         this.article.voteDown();
         return false;
-    }
-
-    constructor() {
-        this.article = new Article('Angular 2', 'http://angular.io', 10);
     }
 }

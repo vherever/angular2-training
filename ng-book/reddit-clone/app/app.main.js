@@ -10,8 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var app_reddit_article_1 = require("./app.reddit-article");
+var app_reddit_article_2 = require('./app.reddit-article');
 var RedditApp = (function () {
     function RedditApp() {
+        this.articles = [
+            new app_reddit_article_2.Article('Angular 2', 'http://angular.io', 3),
+            new app_reddit_article_2.Article('React', 'http://facebook.github.io/react', 2),
+            new app_reddit_article_2.Article('Underscore', 'http://underscorejs.org', 1),
+        ];
     }
     RedditApp.prototype.addArticle = function (title, link) {
         console.log("Adding article title: " + title.value + "  and link: " + link.value);

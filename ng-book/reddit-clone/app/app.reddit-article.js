@@ -23,9 +23,9 @@ var Article = (function () {
     };
     return Article;
 }());
+exports.Article = Article;
 var ArticleComponent = (function () {
     function ArticleComponent() {
-        this.article = new Article('Angular 2', 'http://angular.io', 10);
     }
     ArticleComponent.prototype.voteUp = function () {
         this.article.voteUp();
@@ -38,6 +38,7 @@ var ArticleComponent = (function () {
     ArticleComponent = __decorate([
         core_1.Component({
             selector: 'reddit-article',
+            inputs: ['article'],
             host: {
                 class: 'row'
             },
