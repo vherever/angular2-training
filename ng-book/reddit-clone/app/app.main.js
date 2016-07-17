@@ -21,6 +21,9 @@ var RedditApp = (function () {
     }
     RedditApp.prototype.addArticle = function (title, link) {
         console.log("Adding article title: " + title.value + "  and link: " + link.value);
+        this.articles.push(new app_reddit_article_2.Article(title.value, link.value, 0));
+        title.value = '';
+        link.value = '';
     };
     RedditApp = __decorate([
         core_1.Component({

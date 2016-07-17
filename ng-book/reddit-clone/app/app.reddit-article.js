@@ -15,6 +15,15 @@ var Article = (function () {
         this.link = link;
         this.votes = votes || 0;
     }
+    Article.prototype.domain = function () {
+        try {
+            var link = this.link.split('//')[1];
+            return link.split('/')[0];
+        }
+        catch (err) {
+            return null;
+        }
+    };
     Article.prototype.voteUp = function () {
         this.votes += 1;
     };
