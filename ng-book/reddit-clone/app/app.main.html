@@ -18,6 +18,6 @@
 
 <div class="ui grid posts">
     <reddit-article
-    *ngFor="let oneArticle of articles"
+    *ngFor="let oneArticle of sortedArticles()"
     [article]="oneArticle"></reddit-article>
 </div>

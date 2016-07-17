@@ -25,6 +25,9 @@ var RedditApp = (function () {
         title.value = '';
         link.value = '';
     };
+    RedditApp.prototype.sortedArticles = function () {
+        return this.articles.sort(function (a, b) { return b.votes - a.votes; });
+    };
     RedditApp = __decorate([
         core_1.Component({
             selector: 'reddit',
