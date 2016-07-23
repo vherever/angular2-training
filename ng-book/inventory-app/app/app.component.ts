@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { ProductService } from './services/product.service';
+import { Product } from './models/product.model';
 
 @Component({
     selector: 'my-app',
@@ -7,9 +8,9 @@ import { ProductService } from './services/product.service';
 })
 
 export class InventoryApp {
-    product: ProductService;
+    products: Product[];
 
     constructor(private p: ProductService) {
-        this.product = p;
+        this.products = p.products;
     }
 }

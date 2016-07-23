@@ -13,7 +13,7 @@ var product_service_1 = require('./services/product.service');
 var InventoryApp = (function () {
     function InventoryApp(p) {
         this.p = p;
-        this.product = p;
+        this.products = p.products;
     }
     InventoryApp = __decorate([
         core_1.Component({
