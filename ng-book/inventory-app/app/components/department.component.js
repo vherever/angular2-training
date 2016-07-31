@@ -9,20 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var product_service_1 = require('./services/product.service');
-var InventoryApp = (function () {
-    function InventoryApp(p) {
-        this.p = p;
-        this.products = p.products;
+/**
+ * @ProductDepartment: A component to show the breadcrumbs to a
+ * Product's department
+ */
+var ProductDepartment = (function () {
+    function ProductDepartment() {
     }
-    InventoryApp = __decorate([
+    ProductDepartment = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'app/app.component.html',
+            selector: 'product-department',
+            inputs: ['product'],
+            templateUrl: 'app/templates/department.component.html'
         }), 
-        __metadata('design:paramtypes', [product_service_1.ProductService])
-    ], InventoryApp);
-    return InventoryApp;
+        __metadata('design:paramtypes', [])
+    ], ProductDepartment);
+    return ProductDepartment;
 }());
-exports.InventoryApp = InventoryApp;
-//# sourceMappingURL=app.component.js.map
+exports.ProductDepartment = ProductDepartment;
+//# sourceMappingURL=department.component.js.map
