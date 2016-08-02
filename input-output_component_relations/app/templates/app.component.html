@@ -1,0 +1,7 @@
+<div class="parent">
+    <h1>Parent</h1>
+    <p>Value entered in child component: {{childValue}}</p>
+    <input type="text" #parentInput (keyup)="0">
+
+    <child [parentValue]="parentInput.value" (childChanged)="childValue = $event"></child>
+</div>
