@@ -30,8 +30,4 @@ module.exports = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"./dist/vendor.bundle.js")
     ]
-};{
-    test: /\.scss$/,
-        exclude: /node_modules/,
-        loaders: ['raw-loader', 'sass-loader'] // sass-loader not scss-loader
-}
+};
