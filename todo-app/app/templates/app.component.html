@@ -1,1 +1,12 @@
-<h1>Hello World!</h1>
+<table>
+    <tr>
+        <th>Task</th>
+        <th>Due date</th>
+        <th>Done</th>
+    </tr>
+    <tr *ngFor="let task of tasks">
+        <td>{{task.name}}</td>
+        <td>{{task.dueDate}}</td>
+        <td>{{task.done}}</td>
+    </tr>
+</table>
