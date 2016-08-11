@@ -4,7 +4,7 @@ export var tasks: Task[] = [
     {
         name: 'Read book',
         dueDate: '2016-01-15',
-        done: false
+        done: true
     },
     {
         name: 'Make a lunch',
@@ -14,6 +14,6 @@ export var tasks: Task[] = [
     {
         name: 'Bake a cake',
         dueDate: '2016-01-17',
-        done: false
+        done: true
     },
 ];

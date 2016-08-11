@@ -1,12 +1,22 @@
+<style>
+    .done {
+        color: forestgreen;
+    }
+</style>
+<input type="text" [(ngModel)]="newTask.name" />
+<input type="date" [(ngModel)]="newTask.dueDate" />
+<button (click)="addTask(newTask)">Add</button>
 <table>
     <tr>
         <th>Task</th>
         <th>Due date</th>
         <th>Done</th>
+        <th></th>
     </tr>
     <tr *ngFor="let task of tasks">
         <td>{{task.name}}</td>
         <td>{{task.dueDate}}</td>
-        <td>{{task.done}}</td>
+        <td [class.done]="task.done">{{task.done ? 'DONE' : 'IN PROGRESS'}}</td>
+        <td><button (click)="task.done = !task.done">{{task.done ? 'Undo' : 'Done'}}</button></td>
     </tr>
 </table>
