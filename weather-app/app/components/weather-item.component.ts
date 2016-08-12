@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import {WeatherItem} from "../models/weather-item";
 
 @Component ({
     selector: 'weather-item',
@@ -6,5 +7,8 @@ import {Component} from "@angular/core";
 })
 
 export class WeatherItemComponent {
-
+    weatherItem: WeatherItem;
+    constructor() {
+        this.weatherItem = new WeatherItem('London', 'Rainy', 17);
+    }
 }
