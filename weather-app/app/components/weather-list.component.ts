@@ -1,18 +1,22 @@
 import {Component, OnInit} from "@angular/core";
 import {WeatherItemComponent} from "./weather-item.component";
-import {WeatherItem} from "../models/weather-item";
-import {WEATHER_ITEMS} from "../weather-data";
+import {WeatherItem} from "../models/weather-item.model";
+import {WeatherService} from "../services/weather.service";
 
 @Component ({
     selector: 'weather-list',
     templateUrl: 'app/templates/weather-list.component.html',
-    directives : [WeatherItemComponent]
+    directives : [WeatherItemComponent],
+    providers: [WeatherService]
 })
 
 export class WeatherListComponent implements OnInit{
     weatherItems: WeatherItem[];
 
+    constructor(private _weatherService: WeatherService) {
+
+    }
     ngOnInit():any {
-        this.weatherItems = WEATHER_ITEMS;
+        this.weatherItems = this._weatherService.getWeatherItems();
     }
  }
