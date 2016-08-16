@@ -10,3 +10,23 @@
                placeholder="Search Music Here...">
     </div>
 </form>
+
+<div *ngIf="searchRes">
+    <div *ngFor="let res of searchRes">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="search-res well">
+                    <a href="#">
+                        <h4>{{ res.name }}</h4>
+                    </a>
+                    <div>
+                        <span *ngIf="res.genres.length">
+                            <strong>Genres: </strong>
+                            <span *ngFor="let genre of res.genres">{{ genre }}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
