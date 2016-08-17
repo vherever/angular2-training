@@ -1,11 +1,13 @@
 import {Component} from "@angular/core";
 import {SpotifyService} from "../services/spotify.service";
 import {Artist} from "../models/artist";
+import {ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
     selector: 'search',
     templateUrl: 'app/templates/search.component.html',
-    providers: [SpotifyService]
+    providers: [SpotifyService],
+    directives: [ROUTER_DIRECTIVES]
 })
 export class SearchComponent {
     searchStr: string;
