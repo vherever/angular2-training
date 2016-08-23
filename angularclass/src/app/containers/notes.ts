@@ -9,5 +9,13 @@ import {NoteCard} from "../ui/note-card";
     directives: [NoteCard]
 })
 export class Notes {
-    note = { title: 'new note', value: 'note here', color: 'lightblue' }
+    notes = [
+        { title: 'new note', value: 'note here', color: 'lightblue' },
+        { title: 'new note', value: 'note here', color: 'pink' },
+        { title: 'new note', value: 'note here', color: 'lightyellow' }
+    ];
+
+    onNoteChecked(note, i) {
+        this.notes.splice(i, 1);
+    }
 }
