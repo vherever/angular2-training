@@ -1,6 +1,5 @@
 <div class="note-creator shadow-2">
-    <pre>{{newNote | json}}</pre>
-    <form class="row">
+    <form class="row" (submit)="onCreateNote()">
         <input
             type="text"
             [(ngModel)]="newNote.title"

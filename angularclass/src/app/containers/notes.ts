@@ -22,4 +22,7 @@ export class Notes {
     onNoteChecked(note, i) {
         this.notes.splice(i, 1);
     }
+    onCreateNote(note) {
+        this.notes.push(note);
+    }
 }
