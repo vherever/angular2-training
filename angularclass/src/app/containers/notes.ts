@@ -1,12 +1,16 @@
 import {Component} from '@angular/core';
 import {NoteCard} from "../ui/note-card";
+import {NoteCreator} from "../ui/note-creator";
 
 @Component({
     moduleId: module.id,
     selector: 'notes-container',
     templateUrl: 'app/containers/notes.html',
     styleUrls: ['app/containers/notes.css'],
-    directives: [NoteCard]
+    directives: [
+        NoteCard,
+        NoteCreator
+    ]
 })
 export class Notes {
     notes = [
