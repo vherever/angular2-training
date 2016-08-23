@@ -8,6 +8,7 @@ import {Component, Output, EventEmitter} from "@angular/core";
 export class NoteCreator {
     @Output() createNote = new EventEmitter;
     newNote = {title: '', value: ''};
+    fullForm: boolean = false;
 
     onCreateNote() {
         const {title, value} = this.newNote;
@@ -18,5 +19,9 @@ export class NoteCreator {
     }
     reset() {
         this.newNote = {title: '', value: ''};
+    }
+
+    toggle(value: boolean) {
+        this.fullForm = value;
     }
 }
