@@ -15,16 +15,16 @@ export class ApiService {
 
     constructor(private http:Http) {}
 
-    private getJson(responce: Response) {
-        return responce.json();
+    private getJson(response: Response) {
+        return response.json();
     }
 
-    private checkForError(responce: Response): Response {
-        if(responce.status >= 200 && responce.status < 300) {
-            return responce;
+    private checkForError(response: Response): Response {
+        if(response.status >= 200 && response.status < 300) {
+            return response;
         } else {
-            var error = new Error(responce.statusText);
-            error['responce'] = responce;
+            var error = new Error(response.statusText);
+            error['response'] = response;
             console.error(error);
             throw error;
         }
