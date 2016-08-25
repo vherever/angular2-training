@@ -1,9 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {NoteCard, NoteCreator} from "../ui";
 import {NoteService} from '../services';
 
 @Component({
-    moduleId: module.id,
     selector: 'notes-container',
     templateUrl: 'app/containers/notes.html',
     styleUrls: ['app/containers/notes.css'],
@@ -12,8 +11,9 @@ import {NoteService} from '../services';
         NoteCreator
     ]
 })
-export class Notes {
+export class Notes implements OnDestroy {
     notes = [];
+    ngOnDestroy() {}
 
     constructor(private noteService: NoteService) {
         this.noteService.getNotes()
