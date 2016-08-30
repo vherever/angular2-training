@@ -1,7 +1,7 @@
 import {Component, OnDestroy} from '@angular/core';
 import {NoteCard, NoteCreator} from "../ui";
 import {NoteService} from '../services';
-import {Store} from '../containers/store';
+import {Store} from '../store';
 import 'rxjs';
 @Component({
     selector: 'notes-container',

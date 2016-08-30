@@ -1,5 +1,5 @@
 import * as services from './services';
-import {Store} from './containers/store'
+import {Store} from './store'
 export {App} from './app';
 export {routes} from './routes';
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Store } from '../containers/store';
+import { Store } from '../store';
 @Injectable()
 export class StoreHelper {
     constructor(private store: Store) {}
